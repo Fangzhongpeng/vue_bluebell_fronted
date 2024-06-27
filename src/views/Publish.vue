@@ -81,15 +81,21 @@ export default {
     submit() {
       this.$axios({
         method: "post",
-        url: "/post",
+        url: "/posts",
         data: JSON.stringify({
           title: this.title,
           content: this.content,
           community_id: this.selectCommunity.id
         })
       })
+      // .then(response => {
+      //     console.log(response.data);
+
+      //       this.$router.push({ path: this.redirect || "/" });
+
+      //   })
         .then(response => {
-          console.log(response.data);
+          console.log(response.msg);
           if (response.code == 1000) {
             this.$router.push({ path: this.redirect || "/" });
           } else {

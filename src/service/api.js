@@ -15,6 +15,7 @@ axios.interceptors.request.use((config) => {
 });
 
 axios.interceptors.response.use(
+	
 	response => {
 		if (response.status === 200) {
 			return Promise.resolve(response.data);
